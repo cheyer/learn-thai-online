@@ -1,6 +1,6 @@
 export default async (req, res) => {
   const secret = process.env.TELEGRAM_SECRET;
-  const domain = "https://a48ab4dba86c.ngrok.io/api/bot";
+  const domain = process.env.CALLBACK_URL;
 
   try {
     const fetchResult = await fetch(
