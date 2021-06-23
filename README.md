@@ -1,13 +1,11 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# learn-thai-online 🇹🇭 🤖 📝
+This repo contains a NEXT.JS website (super early WIP) and a telegram bot making use of serverless functions (still WIP, but hey it's working).
 
+Disclaimer: This is a learning project, so neither the app is complete nor the learning content will be complete.
 
-## Todos
-
-- [] Add Typescript https://nextjs.org/learn/excel/typescript/nextjs-types
-- [] Add Telegram Bot
-- [] Add landing page
-- [] deploy to vercel
-- [] connect domain
+Here are the links to the Telegram Bot:
+- Production Bot: [@thai_learning_game_bot](https://t.me/thai_learning_game_bot)
+- Staging Bot (for local development): [@thai_learning_game_staging_bot](https://t.me/thai_learning_game_staging_bot)
 
 ## Run Locally
 1. Run `$ npm run ngrok` and copy `Forwarding URL` (e.g. `https://<some-number>.ngrok.io`)
@@ -19,3 +17,6 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 ## Deployment
 This repo is deployed on `Vercel` on every push on the `main` branch. Make sure environment variables are set [here](https://vercel.com/cheyer/learn-thai-online/settings/environment-variables).
+
+## CI/CD
+todo
