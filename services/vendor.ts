@@ -47,8 +47,8 @@ export interface IInlineKeyboardButton {
 
 export interface IUpdate {
   update_id: number;
-  message: IMessage;
-  callback_query: ICallbackQuery;
+  message?: IMessage;
+  callback_query?: ICallbackQuery;
 }
 
 export interface IMessageOptions {
@@ -59,4 +59,18 @@ export interface IMessageOptions {
   disable_notification?: boolean;
   reply_to_message_id?: number;
   reply_markup?: IInlineKeyboardMarkup;
+}
+
+export interface IInlineKeyboardButtons {
+  text: string;
+  callback_data: string;
+}
+
+// https://core.telegram.org/bots/api#answercallbackquery
+export interface IAnswerCallbackQueryOptions {
+  callback_query_id: string;
+  text?: string;
+  show_alert?: boolean;
+  url?: string;
+  cache_time?: number;
 }
