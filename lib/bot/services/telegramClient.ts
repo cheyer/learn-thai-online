@@ -1,5 +1,5 @@
 import { post } from "./fetch";
-import { IAnswerCallbackQueryOptions, IMessageOptions } from "./vendor";
+import { IAnswerCallbackQueryOptions, IMessageOptions } from "../vendor";
 
 export const sendMessage = async (options: IMessageOptions) =>
   await post("sendMessage", options);

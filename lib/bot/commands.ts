@@ -1,6 +1,6 @@
-import { translations } from "../data/translations";
+import { translations } from "../../data/translations";
 import { askQuestion } from "./askQuestion";
-import { sendMessage } from "./telegramClient";
+import { sendMessage } from "./services/telegramClient";
 import { IUpdate } from "./vendor";
 
 export enum BOT_COMMANDS {

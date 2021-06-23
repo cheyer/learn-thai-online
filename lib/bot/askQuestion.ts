@@ -1,5 +1,5 @@
-import consonants from "../data/consonants";
-import { sendMessage } from "./telegramClient";
+import consonants from "../../data/consonants";
+import { sendMessage } from "./services/telegramClient";
 import { IInlineKeyboardButtons } from "./vendor";
 
 const getRandomInt = (max: number) =>
