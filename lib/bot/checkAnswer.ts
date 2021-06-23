@@ -6,7 +6,7 @@ import { IUpdate } from "./vendor";
 export const checkAnswer = async (update: IUpdate) => {
   const callbackQuery = update.callback_query;
 
-  answerCallbackQuery({
+  await answerCallbackQuery({
     callback_query_id: callbackQuery.id,
     text:
       callbackQuery.data === "true"
