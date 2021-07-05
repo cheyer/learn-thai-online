@@ -1,4 +1,4 @@
-enum ConsonantClass {
+export enum ConsonantClass {
   low = "low",
   mid = "mid",
   high = "high",

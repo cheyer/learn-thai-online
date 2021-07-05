@@ -1,16 +1,21 @@
-import { IConsonant } from "../data/consonants";
+import { ConsonantClass, IConsonant } from "../data/consonants";
+import Badge, { BadgeType } from "./Badge";
+
+const getType = (tone: ConsonantClass): BadgeType => {
+  switch (tone) {
+    case ConsonantClass.high:
+      return "danger";
+    case ConsonantClass.mid:
+      return "warning";
+    default:
+    case ConsonantClass.low:
+      return "success";
+  }
+};
 
 interface Props {
   consonant: IConsonant;
 }
-
-const Badge = ({ children }) => {
-  return (
-    <div className="bg-yellow-200 text-yellow-700 px-2 py-0.5 rounded-lg">
-      {children}
-    </div>
-  );
-};
 
 const Row = ({ description, value }) => {
   return (
@@ -44,7 +49,7 @@ const Card: React.FC<Props> = ({ consonant }) => {
 
       <div className="flex justify-between">
         <span className="text-gray-500">tone class</span>
-        <Badge>{consonant.class}</Badge>
+        <Badge type={getType(consonant.class)}>{consonant.class}</Badge>
       </div>
     </div>
   );
