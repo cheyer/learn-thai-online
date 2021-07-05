@@ -31,7 +31,7 @@ const Card: React.FC<Props> = ({ consonant }) => {
     { key: "example", value: consonant.thai },
     { key: "transliteration", value: consonant.rtgs },
     { key: "meaning", value: consonant.meaning },
-    { key: "sounds like", value: consonant.meaning },
+    // { key: "sounds like", value: consonant.meaning },
   ];
 
   return (
