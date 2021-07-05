@@ -20,3 +20,6 @@ This repo is deployed on `Vercel` on every push on the `main` branch. Make sure 
 
 ## CI/CD
 todo
+
+## Design
+https://www.figma.com/file/gcWsOdnG2LzC7BF6G7qsiw/Learn-Thai
