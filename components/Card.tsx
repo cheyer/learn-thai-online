@@ -35,7 +35,7 @@ const Card: React.FC<Props> = ({ consonant }) => {
   ];
 
   return (
-    <div className="bg-gray-50 px-10 py-5 m-6 rounded-3xl shadow-md">
+    <li className="bg-gray-50 px-5 md:px-10 py-5 m-6 rounded-3xl shadow-md">
       <div className="pb-10">
         <span className="text-9xl text-bold">{consonant.symbol}</span>
         <span className="text-7xl text-gray-500">
@@ -51,7 +51,7 @@ const Card: React.FC<Props> = ({ consonant }) => {
         <span className="text-gray-500">tone class</span>
         <Badge type={getType(consonant.class)}>{consonant.class}</Badge>
       </div>
-    </div>
+    </li>
   );
 };
 
