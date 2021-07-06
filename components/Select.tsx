@@ -20,7 +20,9 @@ const Select: React.FC<Props> = ({ onChange, value, options, label }) => {
         className="w-full bg-white border hover:border-blue-500 border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left"
       >
         {options.map((o) => (
-          <option value={o.value}>{o.description}</option>
+          <option key={o.value} value={o.value}>
+            {o.description}
+          </option>
         ))}
       </select>
     </>

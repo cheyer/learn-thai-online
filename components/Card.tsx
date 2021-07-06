@@ -44,7 +44,7 @@ const Card: React.FC<Props> = ({ consonant }) => {
         </span>
       </div>
       {rows.map((row) => (
-        <Row description={row.key} value={row.value} />
+        <Row key={row.key} description={row.key} value={row.value} />
       ))}
 
       <div className="flex justify-between">
