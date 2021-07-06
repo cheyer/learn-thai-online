@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/Card";
 import Layout, { siteTitle } from "../components/layout";
+import Search from "../components/Search";
 import Select from "../components/Select";
 import consonants, { ConsonantClass, IConsonant } from "../data/consonants";
 import { getSortedPostsData } from "../lib/posts";
@@ -14,9 +15,28 @@ const filterConsonants = (consonants: IConsonant[], filter: string) => {
   return consonants.filter((consonant) => consonant.class === filter);
 };
 
+const searchConsonants = (consonants: IConsonant[], search: string) => {
+  const trimmedValue = search.trim();
+  if (trimmedValue === "") {
+    return consonants;
+  }
+
+  return consonants.filter(
+    (consonant) =>
+      consonant.class.includes(trimmedValue) ||
+      consonant.meaning.includes(trimmedValue) ||
+      consonant.rtgs.includes(trimmedValue) ||
+      consonant.symbol.includes(trimmedValue) ||
+      consonant.thai.includes(trimmedValue) ||
+      consonant.transliteration.includes(trimmedValue)
+  );
+};
+
 export default function Home({ allPostsData }) {
+  const [searchValue, setSearchValue] = useState("");
   const [toneFilter, setToneFilter] = useState("");
-  const filteredConsonants = filterConsonants(consonants, toneFilter);
+  const searchedConsonants = searchConsonants(consonants, searchValue);
+  const filteredConsonants = filterConsonants(searchedConsonants, toneFilter);
 
   return (
     <Layout home>
@@ -46,6 +66,15 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section> */}
+      <section className="mb-8">
+        <p className="text-lg mb-2">Search:</p>
+        <Search
+          onChange={setSearchValue}
+          placeholder="search ..."
+          type="search"
+          value={searchValue}
+        />
+      </section>
       <section className="mb-8">
         <p className="text-lg mb-2">Filters:</p>
         <Select
