@@ -16,7 +16,7 @@ const filterConsonants = (consonants: IConsonant[], filter: string) => {
 };
 
 const searchConsonants = (consonants: IConsonant[], search: string) => {
-  const trimmedValue = search.trim();
+  const trimmedValue = search.toLowerCase().trim();
   if (trimmedValue === "") {
     return consonants;
   }
