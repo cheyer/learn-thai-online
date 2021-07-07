@@ -1,5 +1,7 @@
 import { ConsonantClass, IConsonant } from "../data/consonants";
+import { useSpeech } from "../lib/hooks/useSpeech";
 import Badge, { BadgeType } from "./Badge";
+import PlayButton from "./PlayButton";
 
 const getType = (tone: ConsonantClass): BadgeType => {
   switch (tone) {
@@ -33,20 +35,31 @@ const Card: React.FC<Props> = ({ consonant }) => {
     { key: "meaning", value: consonant.meaning },
     // { key: "sounds like", value: consonant.meaning },
   ];
+  const { speak, cancel, speaking } = useSpeech({ rate: 0.8 });
+  const handleClick = () => {
+    if (speaking) {
+      return cancel();
+    }
+    speak(consonant.thai);
+  };
 
   return (
     <li className="bg-gray-50 hover:bg-gray-100 px-5 md:px-10 py-5 mb-6 rounded-3xl shadow-md">
-      <div className="pb-10">
-        <span className="text-9xl text-bold">{consonant.symbol}</span>
-        <span className="text-7xl text-gray-500">
-          {" / "}
-          {consonant.transliteration}
-        </span>
+      <div className="pb-4 flex justify-between items-center">
+        <div>
+          <span className="text-6xl text-bold">{consonant.symbol}</span>
+          <span className="text-4xl text-gray-500">
+            {" / "}
+            {consonant.transliteration}
+          </span>
+        </div>
+        <div>
+          <PlayButton onClick={handleClick} playing={speaking} />
+        </div>
       </div>
       {rows.map((row) => (
         <Row key={row.key} description={row.key} value={row.value} />
       ))}
-
       <div className="flex justify-between">
         <span className="text-gray-500">tone class</span>
         <Badge type={getType(consonant.class)}>{consonant.class}</Badge>

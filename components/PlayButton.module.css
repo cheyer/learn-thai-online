@@ -1,0 +1,13 @@
+.playButton {
+  font-size: 0;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+
+  border-left: 25px solid black;
+}
+
+.playing {
+  border-left: 25px solid rgb(185, 28, 28);
+}
