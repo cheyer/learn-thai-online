@@ -1,6 +1,6 @@
-import { ConsonantClass, IConsonant } from "../data/consonants";
+import { ConsonantClass, IConsonant } from "../../data/consonants";
 // import { useSpeech } from "../lib/hooks/useSpeech";
-import Badge, { BadgeType } from "./Badge";
+import Badge, { BadgeType } from "../Badge";
 // import PlayButton from "./PlayButton";
 
 const getType = (tone: ConsonantClass): BadgeType => {

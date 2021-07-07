@@ -2,8 +2,8 @@ import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/Card";
 import Layout, { siteTitle } from "../components/layout";
-import Search from "../components/Search";
-import Select from "../components/Select";
+import Search from "../components/inputs/Search";
+import Select from "../components/inputs/Select";
 import consonants, { ConsonantClass, IConsonant } from "../data/consonants";
 
 const filterConsonants = (consonants: IConsonant[], filter: string) => {
