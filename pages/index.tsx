@@ -5,8 +5,6 @@ import Layout, { siteTitle } from "../components/layout";
 import Search from "../components/Search";
 import Select from "../components/Select";
 import consonants, { ConsonantClass, IConsonant } from "../data/consonants";
-import { getSortedPostsData } from "../lib/posts";
-import utilStyles from "../styles/utils.module.css";
 
 const filterConsonants = (consonants: IConsonant[], filter: string) => {
   if (filter === "") {
@@ -98,13 +96,4 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
 }
