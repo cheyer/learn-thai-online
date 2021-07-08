@@ -2,11 +2,9 @@ import Head from "next/head";
 import { useState } from "react";
 import Card from "../components/Card";
 import Layout, { siteTitle } from "../components/layout";
-import Search from "../components/Search";
-import Select from "../components/Select";
+import Search from "../components/inputs/Search";
+import Select from "../components/inputs/Select";
 import consonants, { ConsonantClass, IConsonant } from "../data/consonants";
-import { getSortedPostsData } from "../lib/posts";
-import utilStyles from "../styles/utils.module.css";
 
 const filterConsonants = (consonants: IConsonant[], filter: string) => {
   if (filter === "") {
@@ -66,6 +64,7 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section> */}
+      <h2 className="text-4xl font-bold mb-6">Thai Consonants</h2>
       <section className="mb-8">
         <p className="text-lg mb-2">Search:</p>
         <Search
@@ -98,13 +97,4 @@ export default function Home({ allPostsData }) {
       </section>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
 }

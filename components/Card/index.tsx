@@ -1,6 +1,6 @@
-import { ConsonantClass, IConsonant } from "../data/consonants";
+import { ConsonantClass, IConsonant } from "../../data/consonants";
 // import { useSpeech } from "../lib/hooks/useSpeech";
-import Badge, { BadgeType } from "./Badge";
+import Badge, { BadgeType } from "../Badge";
 // import PlayButton from "./PlayButton";
 
 const getType = (tone: ConsonantClass): BadgeType => {
@@ -47,7 +47,7 @@ const Card: React.FC<Props> = ({ consonant }) => {
     <li className="bg-gray-50 hover:bg-gray-100 px-5 md:px-10 py-5 mb-6 rounded-3xl shadow-md">
       {/* <div className="pb-4 flex justify-between items-center"> */}
       <div>
-        <span className="text-6xl text-bold">{consonant.symbol}</span>
+        <span className="text-6xl font-bold">{consonant.symbol}</span>
         <span className="text-4xl text-gray-500">
           {" / "}
           {consonant.transliteration}
