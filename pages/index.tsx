@@ -64,6 +64,7 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section> */}
+      <h2 className="text-4xl font-bold mb-6">Thai Consonants</h2>
       <section className="mb-8">
         <p className="text-lg mb-2">Search:</p>
         <Search
