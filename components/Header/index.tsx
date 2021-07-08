@@ -43,11 +43,11 @@ export default function Header() {
       </div>
       <p>Learn Thai Vowels</p>
       <div className="flex">
-        <Badge type="warning">coming soon</Badge>
+        <Badge type="warning">soon</Badge>
       </div>
       <p>Learn Thai Numbers</p>
       <div className="flex">
-        <Badge type="warning">coming soon</Badge>
+        <Badge type="warning">soon</Badge>
       </div> */}
       <h2 className="text-4xl font-bold mb-6">Features</h2>
       <Feature
@@ -58,19 +58,19 @@ export default function Header() {
       />
       <Feature
         headline="Learn Thai Vowels"
-        badgeText="coming soon"
+        badgeText="soon"
         description="Learn all 16 Thai vowels that are short and long and can be wildly combined!"
         badgeType="warning"
       />
       <Feature
         headline="Learn Thai Numerals"
-        badgeText="coming soon"
+        badgeText="soon"
         description="Learn Thai numerals and master prices, telephone numbers and more!"
         badgeType="warning"
       />
       <Feature
         headline="Learn with Bot"
-        badgeText="coming soon"
+        badgeText="soon"
         description="Learn the Thai alphabet by playing a quiz game with a bot!"
         badgeType="warning"
       />
