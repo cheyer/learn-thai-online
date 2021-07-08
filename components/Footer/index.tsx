@@ -15,8 +15,8 @@ export default function Footer() {
           github 🐙
         </a>
         {/* <a href="#">privacy 🕵️</a>
-        <a href="#">legal 👩‍⚖️</a>
-        <a href="#">stats 📊</a> */}
+        <a href="#">legal 👩‍⚖️</a>*/}
+        <a href="https://plausible.io/learnthai.online">stats 📊</a>
       </div>
       <div className="flex justify-center py-4 text-sm">
         <p>made with ❤️ in hamburg</p>
