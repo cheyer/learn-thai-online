@@ -19,7 +19,7 @@ const langMapping: {
 
 export const useSpeech = (props: SpeechOptionInterface = {}) => {
   const { pitch, rate, onSpeakEnd } = props;
-  const [synth, setSynth] = useState(undefined);
+  const [synth, setSynth] = useState<SpeechSynthesis>(undefined);
   const [speaking, setSpeaking] = useState(false);
   const [language, setLanguage] = useState(props?.language || "th");
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
@@ -27,12 +27,16 @@ export const useSpeech = (props: SpeechOptionInterface = {}) => {
     useState<SpeechSynthesisVoice | null>();
 
   useEffect(() => {
-    window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
+    if ("onvoiceschanged" in window.speechSynthesis) {
+      speechSynthesis.onvoiceschanged = loadVoices;
+    } else {
+      loadVoices();
+    }
+
     setSynth(window.speechSynthesis);
   }, []);
 
   const loadVoices = useCallback(() => {
-    console.log("logging voices");
     if (!synth) {
       return;
     }
@@ -55,6 +59,7 @@ export const useSpeech = (props: SpeechOptionInterface = {}) => {
     (text: string, speakOptions?: SpeechOptionInterface) => {
       return new Promise((resolve) => {
         setSpeaking(true);
+
         const utterance = new SpeechSynthesisUtterance(text);
 
         utterance.onend = () => {
