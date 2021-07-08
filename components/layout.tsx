@@ -15,7 +15,7 @@ export default function Layout({ children, home }) {
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
-            content="Learn how to build a personal website using Next.js"
+            content="With learnthai.online you can easily learn the Thai Alphabet in no time ⏱"
           />
           <meta
             property="og:image"
