@@ -23,6 +23,11 @@ export default function Layout({ children, home }) {
           />
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
+          <script
+            defer
+            data-domain="learnthai.online"
+            src="https://plausible.io/js/plausible.js"
+          ></script>
         </Head>
         <Header />
         <main>{children}</main>
