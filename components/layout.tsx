@@ -28,6 +28,11 @@ export default function Layout({ children, home }) {
             data-domain="learnthai.online"
             src="https://plausible.io/js/plausible.js"
           ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `if (document.location.hostname.indexOf('vercel.app') != -1) localStorage.plausible_ignore = true`,
+            }}
+          />
         </Head>
         <Header />
         <main>{children}</main>
